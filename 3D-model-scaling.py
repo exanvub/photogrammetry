@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import messagebox
 import numpy as np
+import pyperclip  # Import pyperclip library for clipboard operations
 
 
 def calculate_distance(p1, p2):
@@ -16,6 +16,7 @@ def calculate_scaling_factor(model_distances, real_life_distances):
 def calculate_and_show_scaling_factor():
     model_points = []
     real_life_distances = []
+    error_message = ""
 
     # Get the user input from the Entry widgets
     for i in range(len(model_entries)):
@@ -26,60 +27,104 @@ def calculate_and_show_scaling_factor():
             real_life_distances.append(float(real_entries[i].get()))
         except ValueError:
             # Handle invalid input (not enough coordinates)
-            messagebox.showerror("Input Error",
-                                 "Please enter two sets of (x, y, z) coordinates for each model points set.")
+            error_message = "Please enter two sets of (x, y, z) coordinates for each model points set."
+            break
+
+    if not error_message:
+        # Calculate model distances
+        model_distances = [calculate_distance(p1, p2) for p1, p2 in model_points]
+
+        if len(model_distances) == 0:
+            error_message = "Please enter at least one set of model points."
+        else:
+            # Calculate average scaling factor
+            scaling_factor = calculate_scaling_factor(model_distances, real_life_distances)
+
+            # Update the scaling factor label
+            scaling_factor_label.config(text=f"Average Scaling Factor: {scaling_factor:.4f}")
+
+            # Clear the error message
+            clear_error_message()
             return
 
-    # Calculate model distances
-    model_distances = [calculate_distance(p1, p2) for p1, p2 in model_points]
-
-    # Calculate average scaling factor
-    scaling_factor = calculate_scaling_factor(model_distances, real_life_distances)
-
-    # Update the scaling factor label
-    scaling_factor_label.config(text=f"Average Scaling Factor: {scaling_factor:.4f}")
+    # Display error message if there was an issue with the input
+    error_label.config(text=error_message)
 
 
-# Create the main window
-root = tk.Tk()
-root.title("3D Model Scaling")
-
-# Lists to store Entry widgets for model points and real-life distances
-model_entries = []
-real_entries = []
-
-
-# Function to add new set of model points and real-life distance entries
 def add_entry_fields():
-    model_label = tk.Label(root, text="Model Points: x1, y1, z1, x2, y2, z2:")
-    model_label.grid(row=len(model_entries) + 1, column=0)
+    wrapper_frame = tk.Frame(root)
+    wrapper_frame.grid(row=len(model_entries) + 1, column=0, columnspan=11)
+    wrapper_entries.append(wrapper_frame)
 
-    model_entry = tk.Entry(root)
-    model_entry.grid(row=len(model_entries) + 1, column=1)
+    model_label = tk.Label(wrapper_frame, text="Model Points: x1, y1, z1, x2, y2, z2:")
+    model_label.grid(row=0, column=0)
+
+    model_entry = tk.Entry(wrapper_frame, width=50)
+    model_entry.grid(row=0, column=1, columnspan=8)
     model_entries.append(model_entry)
 
-    real_label = tk.Label(root, text="Real-Life Distance: mm:")
-    real_label.grid(row=len(real_entries) + 1, column=2)
+    real_label = tk.Label(wrapper_frame, text="Real-Life Distance: mm:")
+    real_label.grid(row=0, column=9)
 
-    real_entry = tk.Entry(root)
-    real_entry.grid(row=len(real_entries) + 1, column=3)
+    real_entry = tk.Entry(wrapper_frame)
+    real_entry.grid(row=0, column=10)
     real_entries.append(real_entry)
 
 
-# Button to add more model points and real-life distance entries
+def remove_last_set():
+    if len(model_entries) > 0:
+        model_entries[-1].destroy()
+        model_entries.pop()
+
+    if len(real_entries) > 0:
+        real_entries[-1].destroy()
+        real_entries.pop()
+
+    if len(wrapper_entries) > 0:
+        wrapper_entries[-1].destroy()
+        wrapper_entries.pop()
+
+
+def copy_to_clipboard():
+    scaling_factor = scaling_factor_label.cget("text")
+    scaling_factor = scaling_factor.split(": ")[1]
+    pyperclip.copy(scaling_factor)
+    success_label.config(text="Average Scaling Factor copied to clipboard!")
+
+
+def clear_error_message():
+    error_label.config(text="")
+
+
+root = tk.Tk()
+root.title("3D Model Scaling")
+root.geometry("1200x300")  # Set window size (width x height)
+
+model_entries = []
+real_entries = []
+wrapper_entries = []
+
 add_button = tk.Button(root, text="Add Set", command=add_entry_fields)
 add_button.grid(row=0, column=0, columnspan=2)
 
-# Button to calculate the scaling factor
-calculate_button = tk.Button(root, text="Calculate Scaling Factor", command=calculate_and_show_scaling_factor)
-calculate_button.grid(row=0, column=2, columnspan=2)
+remove_button = tk.Button(root, text="Remove Set", command=remove_last_set)
+remove_button.grid(row=0, column=2, columnspan=2)
 
-# Add initial entry fields
+calculate_button = tk.Button(root, text="Calculate Scaling Factor", command=calculate_and_show_scaling_factor)
+calculate_button.grid(row=len(model_entries) + 5, column=0, columnspan=11)  # Adjust position here
+
 add_entry_fields()
 
-# Label to display the scaling factor
 scaling_factor_label = tk.Label(root, text="Average Scaling Factor: ")
-scaling_factor_label.grid(row=len(model_entries) + 2, column=0, columnspan=4)
+scaling_factor_label.grid(row=len(model_entries) + 6, column=0, columnspan=11)  # Adjust column span here
 
-# Start the Tkinter event loop
+error_label = tk.Label(root, text="", fg="red")
+error_label.grid(row=len(model_entries) + 3, column=0, columnspan=11)  # Adjust column span here
+
+copy_button = tk.Button(root, text="Copy to Clipboard", command=copy_to_clipboard)
+copy_button.grid(row=len(model_entries) + 7, column=0, columnspan=11)  # Adjust position here
+
+success_label = tk.Label(root, text="", fg="green")
+success_label.grid(row=len(model_entries) + 8, column=0, columnspan=11)  # Adjust column span here
+
 root.mainloop()
