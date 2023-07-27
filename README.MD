@@ -1,77 +1,43 @@
-# Photogrammetry using Colmap
+# Photogrammetry-bone Repository
 
-This repository contains instructions for creating 3D models from photographs using Colmap, a powerful open-source software for photogrammetry. The process involves multiple steps, from feature extraction to dense reconstruction, and finally, the generation of a 3D point cloud that can be visualized in Meshlab.
+This repository serves as a supplementary resource for the research paper titled "Reliable and Efficient Photogrammetry in Anatomical Research and Education." It contains 3D models generated using the Colmap and ObjectCapture processes, along with the data used in the statistical analysis of the research paper. Additionally, there is a Python script called "3D-model-scaling" that facilitates scaling measurements for the 3D models.
 
-## Getting Started
+## Table of Contents
 
-Follow these step-by-step instructions to set up the environment and create your 3D model:
+- [Introduction](#introduction)
+- [Colmap Models](#colmap-models)
+- [ObjectCapture Models](#objectcapture-models)
+- [Data](#data)
+- [3D Model Scaling Script](#3d-model-scaling-script)
+- [Usage](#usage)
 
-### Prerequisites
+## Introduction
 
-- Colmap: Install Colmap on your system by following the instructions on the official Colmap website: [Colmap](https://colmap.github.io/). Make sure it is properly installed and accessible in your terminal or command prompt.
+Photogrammetry plays a crucial role in anatomical research and education, enabling the creation of accurate 3D models from 2D images. This repository accompanies the research paper "Reliable and Efficient Photogrammetry in Anatomical Research and Education," providing resources related to the photogrammetry process.
 
-- Meshlab: Download and install Meshlab from the official website: [Meshlab](https://www.meshlab.net/). Meshlab will be used for visualizing the final 3D point cloud.
+## Colmap Models
 
-### Step 1: Setting up the project
+The `Colmap-models` folder contains 3D models generated using the Colmap process. Colmap is a popular photogrammetry software that allows the reconstruction of 3D structures from image sequences. Refer to the "Colmap-models/README.MD" file for a step-by-step guide on how these models were created with Colmap.
 
-1. Open the Colmap GUI
+## ObjectCapture Models
 
-   ```bash
-   colmap gui
-   ```
+The `ObjectCapture-models` folder includes 3D models generated using the ObjectCapture process. ObjectCapture is photogrammetry API by Apple inc. for fast and easy creation of 3D models. To understand the process of generating these models using ObjectCapture, please consult the "ObjectCapture-models/README.MD" file.
 
-2. Create new project
+## Data
 
-   - Click on "File" in the top menu and choose "New Project".
-   - Select a folder for your new database and choose the folder containing your images.
-   - Click "OK" to create the project and open it in the Colmap GUI.
+The `DATA` folder contains all the datasets used in the statistical analysis presented in the research paper. The data provided here is essential for reproducing the results and verifying the findings of the study.
 
-### Step 2: Feature extraction and matching
+## 3D Model Scaling Script
 
-1. In the Colmap GUI, go to the "Processing" tab.
-2. Click on "Feature Extraction" to extract features from the images.
-3. Next, click on "Feature Matching" to match features across images.
+The repository includes a Python script named "3D-model-scaling.py." This script provides a simple graphical user interface (GUI) to calculate scaling factors for 3D models. The scaling factor is crucial for accurately measuring distances in the real world based on measurements in the 3D model space.
 
-### Step 3: Reconstruction
+The "3D-model-scaling" script employs the following libraries:
 
-1. In the Colmap GUI, go to the "Reconstruction" tab.
-2. Click on "Start Reconstruction" to perform the structure from motion (SfM) reconstruction.
+- `tkinter`: Python's standard GUI library for creating the interface.
+- `numpy`: Used for numerical computations.
+- `pyperclip`: Enables clipboard operations for easy copying of results.
 
-   - If the reconstruction is not satisfactory and some cameras are out of position, adjust the reconstruction options:
-     - Go to "Reconstruction Options".
-     - Increase the value of "min_num_matches" to enforce stricter matching constraints.
-     - Rerun the reconstruction if necessary.
+The script enables users to input model points' coordinates and their corresponding real-life distances. The average scaling factor is then calculated and displayed on the GUI.
 
-3. If the reconstruction is successful, proceed to the dense reconstruction.
 
-### Step 4: Dense reconstruction
-
-1. In the Colmap GUI, go to the "Dense Reconstruction" tab.
-2. Choose a Workspace by creating a new folder named 'dense' inside your current working directory.
-3. Perform the following steps in sequence:
-   - Undistortion
-   - Stereo
-   - Fusion
-
-4. Once the dense reconstruction is complete, you will have a dense point cloud file (`.ply`) inside the 'dense' folder.
-
-### Step 5: Mesh reconstruction in Meshlab
-
-1. Open Meshlab from your system.
-2. In Meshlab, go to the "Filters" menu and choose "Remeshing, Simplification, and Reconstruction".
-3. In the sub-menu, select "Surface Reconstruction: Screened Poisson".
-4. Adjust the reconstruction depth for higher detail by setting the value (default 8) to a higher range (usually 10-12 provides more detail).
-5. Click "Apply" to start the mesh reconstruction process.
-
-Congratulations! You now have a detailed 3D model that you can explore and visualize in Meshlab.
-
-## Acknowledgments
-
-This project was made possible with the help of Colmap and Meshlab. Their respective websites contain valuable resources and documentation that contributed to the success of this photogrammetry workflow.
-
-- Colmap: [https://colmap.github.io/](https://colmap.github.io/)
-- Meshlab: [https://www.meshlab.net/](https://www.meshlab.net/)
-
-Most of the time the default settings work fine, but feel free to experiment with different settings and improve your 3D models.
-
-Happy photogrammetry and 3D modeling!
+By utilizing the resources in this repository and the "3D-model-scaling" script, researchers and educators can efficiently work with 3D models obtained through photogrammetry processes. For any questions or issues related to this repository, please feel free to contact the authors of the research paper.
