@@ -9,7 +9,6 @@ This repository serves as a supplementary resource for the research paper titled
 - [ObjectCapture Models](#objectcapture-models)
 - [Data](#data)
 - [3D Model Scaling Script](#3d-model-scaling-script)
-- [Usage](#usage)
 
 ## Introduction
 
