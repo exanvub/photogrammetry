@@ -108,7 +108,7 @@ add_button = tk.Button(root, text="Add Set", command=add_entry_fields)
 add_button.grid(row=0, column=0, columnspan=2)
 
 remove_button = tk.Button(root, text="Remove Set", command=remove_last_set)
-remove_button.grid(row=0, column=2, columnspan=2)
+remove_button.grid(row=0, column=1, columnspan=2)
 
 calculate_button = tk.Button(root, text="Calculate Scaling Factor", command=calculate_and_show_scaling_factor)
 calculate_button.grid(row=len(model_entries) + 5, column=0, columnspan=11)  # Adjust position here
