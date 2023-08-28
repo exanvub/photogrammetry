@@ -1,0 +1,90 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.colors as mcolors
+
+def read_data_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            data_lines = file.readlines()
+        return data_lines
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' not found.")
+        return None
+
+def extract_quality(data_lines):
+    quality = []
+    for line in data_lines:
+        columns = line.strip().split()
+        if columns:
+            try:
+                quality_value = float(columns[-1])
+                quality.append(quality_value)
+            except ValueError:
+                print(f"Warning: Invalid quality value in line '{line}'")
+    return quality
+
+def create_normalized_histogram(quality_data, title=''):
+    # Calculate histogram and bin edges
+    counts, edges, patches = plt.hist(quality_data, bins=50, range=[-2, 2], edgecolor='black', alpha=0.7, density=True)
+    
+    # Define a custom colormap from blue to white to red
+    colors = ["blue", "white", "red"]
+    cmap = mcolors.LinearSegmentedColormap.from_list("CustomMap", colors, N=256)
+
+    # Calculate the normalization factor to shift the colormap
+    norm_factor = abs(edges).max()
+
+    for count, edge, patch in zip(counts, edges[:-1], patches):
+        # Shift the colormap using the normalization factor
+        norm_val = (edge + norm_factor) / (2 * norm_factor)
+        color = cmap(norm_val)
+        patch.set_facecolor(color)
+    
+    plt.xlabel('Quality')
+    plt.ylabel('Normalized Frequency')
+    plt.title(f'Normalized Histogram of Quality ({title})')
+    plt.grid(True)
+    plt.show()
+
+if __name__ == "__main__":
+    file_paths = [
+        "/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/Mesh-withQuality/txt/42_C3-OC-filter-quality.txt",
+        "/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/Mesh-withQuality/txt/42_C3-colmap-filter-quality.txt",
+        "/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/Mesh-withQuality/txt/42_C3-OC-NOfilter-quality.txt",
+        # Add more file paths as needed
+    ]
+
+
+    combined_data = []
+
+    file_means = []
+    file_std_devs = []
+
+    for file_path in file_paths:
+        data_lines = read_data_file(file_path)
+        if data_lines:
+            quality = extract_quality(data_lines)
+            combined_data.extend(quality)
+
+            ### Uncomment the following line to create a normalized histogram for each file
+            #create_normalized_histogram(quality, title=f'File: {file_path}')
+
+            mean_data = np.mean(quality)
+            std_dev_data = np.std(quality, ddof=1)
+
+            file_means.append(mean_data)
+            file_std_devs.append(std_dev_data)
+
+            print(f"Mean of {file_path}: {mean_data}")
+            print(f"Standard Deviation of {file_path}: {std_dev_data}")
+
+    if combined_data:
+        create_normalized_histogram(combined_data, title='Combined Data')
+
+        overall_mean = np.mean(file_means)
+
+        # Calculate combined standard deviation using the formula you provided
+        overall_std_dev = np.sqrt(np.mean([std_dev ** 2 for std_dev in file_std_devs]))
+
+        print(f"\nOverall Mean: {overall_mean}")
+        print(f"Overall Standard Deviation: {overall_std_dev}")
