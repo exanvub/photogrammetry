@@ -5,22 +5,22 @@ This repository serves as a supplementary resource for the research paper titled
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Colmap Models](#colmap-models)
-- [ObjectCapture Models](#objectcapture-models)
+- [Colmap](#colmap)
+- [ObjectCapture](#objectcapture)
 - [Data](#data)
-- [3D Model Scaling Script](#3d-model-scaling-script)
+- [3D Model Scaling Script](#3d-model-scaling-app)
 
 ## Introduction
 
 Photogrammetry plays a crucial role in anatomical research and education, enabling the creation of accurate 3D models from 2D images. This repository accompanies the research paper "Reliable and Efficient Photogrammetry in Anatomical Research and Education," providing resources related to the photogrammetry process.
 
-## Colmap Models
+## Colmap
 
-The `Colmap-models` folder contains 3D models generated using the Colmap process. Colmap is a popular photogrammetry software that allows the reconstruction of 3D structures from image sequences. Refer to the "Colmap-models/README.MD" file for a step-by-step guide on how these models were created with Colmap.
+The `Colmap` folder contains 3D models generated using the Colmap process. Colmap is a popular photogrammetry software that allows the reconstruction of 3D structures from image sequences. Refer to the "Colmap-models/README.MD" file for a step-by-step guide on how these models were created with Colmap.
 
-## ObjectCapture Models
+## ObjectCapture
 
-The `ObjectCapture-models` folder includes 3D models generated using the ObjectCapture process. ObjectCapture is photogrammetry API by Apple inc. for fast and easy creation of 3D models. To understand the process of generating these models using ObjectCapture, please consult the "ObjectCapture-models/README.MD" file.
+The `ObjectCapture` folder includes 3D models generated using the ObjectCapture process. ObjectCapture is photogrammetry API by Apple inc. for fast and easy creation of 3D models. To understand the process of generating these models using ObjectCapture, please consult the "ObjectCapture-models/README.MD" file.
 
 ## Data
 
@@ -39,4 +39,4 @@ The "3D-model-scaling" script employs the following libraries:
 The script enables users to input model points' coordinates and their corresponding real-life distances. The average scaling factor is then calculated and displayed on the GUI.
 
 
-By utilizing the resources in this repository and the "3D-model-scaling" script, researchers and educators can efficiently work with 3D models obtained through photogrammetry processes. For any questions or issues related to this repository, please feel free to contact the authors of the research paper.
+For any questions or issues related to this repository, please feel free to contact the authors of the research paper.
