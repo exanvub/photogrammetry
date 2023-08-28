@@ -70,7 +70,7 @@ To create a 3D model using the Object Capture API command line app, follow these
 3. Example usage:
 
    ```bash
-   ./HelloPhotogrammetry /Users/username/Desktop/Images /Users/username/Desktop/OutputModel.usdz -d raw
+   ./HelloPhotogrammetry /Users/username/Desktop/Images /Users/username/Desktop/OutputModel -d raw
    ```
 
 4. Press Enter to execute the command.
