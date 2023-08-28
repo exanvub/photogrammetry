@@ -82,3 +82,9 @@ To create a 3D model using the Object Capture API command line app, follow these
 ## Conclusion
 
 You've successfully installed and used the Apple Object Capture API command line app to create high-quality 3D models from a sequence of images. These models can be used in various AR applications to enhance user experiences. Experiment with different settings and capture techniques to achieve the best results for your specific use case.
+
+## Note
+
+If the Commandline app is to complicated to use, you can also try a free app from the Apple App store called: PhotoCatch.
+This app uses the same API in a more userfriendly GUI and looks easy to instal and use.  
+Disclaimer: The PhotoCatch app is not developed by us and all credits and responsibilities for this app go to 'eos innovations llc'

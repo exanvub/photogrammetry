@@ -57,13 +57,16 @@ Follow these step-by-step instructions to set up the environment and create your
 
 ### Step 5: Mesh reconstruction in Meshlab
 
-1. Open Meshlab from your system.
-2. In Meshlab, go to the "Filters" menu and choose "Remeshing, Simplification, and Reconstruction".
-3. In the sub-menu, select "Surface Reconstruction: Screened Poisson".
-4. Adjust the reconstruction depth for higher detail by setting the value (default 8) to a higher range (usually 10-12 provides more detail).
-5. Click "Apply" to start the mesh reconstruction process.
+1. Open Meshlab from your system and import your model.
+2. Preclean: Use various tools avalable in Meshlab to remove unwanted vertices.
+3. Go to the "Filters" menu and choose "Remeshing, Simplification, and Reconstruction".
+4. In the sub-menu, select "Surface Reconstruction: Screened Poisson".
+5. Adjust the reconstruction depth for higher detail by setting the value (default 8) to a higher range (usually 10-12 provides more detail).
+6. Click "Apply" to start the mesh reconstruction process.
 
 Congratulations! You now have a detailed 3D model that you can explore and visualize in Meshlab.
+
+7. You can use other filters in Meshlab to postclean your model
 
 ## Acknowledgments
 
