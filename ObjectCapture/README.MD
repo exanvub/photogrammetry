@@ -1,6 +1,6 @@
 # Apple's Object Capture API Command Line App Tutorial
 
-This guide explains how to install and use Apple's Object Capture API as a command line app for creating photogrammetric models. The Object Capture API enables the creation of high-quality 3D models from a sequence of 2D images. These models can be saved in the USDZ format, which is optimized for use in augmented reality (AR) applications.
+This guide explains how to install and use Apple's Object Capture API as a command line app for creating photogrammetric models. The Object Capture API enables the creation of high-quality 3D models from a sequence of 2D images. These models can be saved in the USDZ format, which is optimized for use in augmented reality (AR) applications. Or obj, which is widely used in other software.
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ To create a 3D model using the Object Capture API command line app, follow these
    ```
 
    - `<input-folder>`: The local input file folder containing images of the object.
-   - `<output-filename>`: Full path to the desired USDZ output file.
+   - `<output-filename>`: Full path to the desired USDZ or obj output file.
    - `--detail <detail>`: Set the detail level of the output model (preview, reduced, medium, full, raw). Default: none.
    - `--sample-ordering <sample-ordering>`: Set sample ordering (unordered, sequential) to potentially speed up computation. Default: unordered.
    - `--feature-sensitivity <feature-sensitivity>`: Set feature sensitivity (normal, high) based on object characteristics. Default: normal.
