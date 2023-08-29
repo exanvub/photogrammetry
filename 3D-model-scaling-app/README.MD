@@ -51,7 +51,6 @@ Here's an example of how to use the script:
 
 - Make sure to enter valid (x, y, z) coordinates and real-life distances in millimeters (with two decimal points).
 - The script calculates the average scaling factor based on the entered point sets.
-- Adjust the GUI layout as needed by modifying the placement of buttons, labels, and entry fields in the script.
 
 ## Disclaimer
 
