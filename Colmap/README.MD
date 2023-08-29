@@ -8,7 +8,7 @@ Follow these step-by-step instructions to set up the environment and create your
 
 ### Prerequisites
 
-- Colmap: Install Colmap on your system by following the instructions on the official Colmap website: [Colmap](https://colmap.github.io/). Make sure it is properly installed and accessible in your terminal or command prompt.
+- Colmap: Install Colmap on your system by following the instructions on the official Colmap website: [Colmap](https://colmap.github.io/). Make sure it is properly installed and accessible in your terminal or command prompt. For the dense reconstruction you will need a CUDA enabled GPU.
 
 - Meshlab: Download and install Meshlab from the official website: [Meshlab](https://www.meshlab.net/). Meshlab will be used for visualizing the final 3D point cloud.
 
