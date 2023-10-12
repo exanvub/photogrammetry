@@ -40,17 +40,18 @@ def create_normalized_histogram(quality_data, title=''):
         color = cmap(norm_val)
         patch.set_facecolor(color)
     
-    plt.xlabel('Quality')
+    plt.xlabel('Quality (mm)')
     plt.ylabel('Normalized Frequency')
     plt.title(f'Normalized Histogram of Quality ({title})')
-    plt.grid(True)
+    plt.grid(False)
     plt.show()
 
 if __name__ == "__main__":
     file_paths = [
-        "/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/Mesh-withQuality/txt/42_C3-OC-filter-quality.txt",
-        "/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/Mesh-withQuality/txt/42_C3-colmap-filter-quality.txt",
-        "/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/Mesh-withQuality/txt/42_C3-OC-NOfilter-quality.txt",
+        #"/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/txt/42_C3-OC-filter-quality.txt",
+        #"/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/txt/42_C3-colmap-filter-quality.txt",
+        #"/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/txt/42_C3-OC-NOfilter-quality.txt",
+        "/Volumes/SAMSUNG_1T/Photogrammetry/Spine/Calculations/42/txt/42_C3-colmap-NOfilter-quality.txt",
         # Add more file paths as needed
     ]
 

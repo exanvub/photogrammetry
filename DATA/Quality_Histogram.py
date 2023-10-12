@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
 # Read the data from histo.txt
-with open("DATA/histo2.txt", "r") as file:
+#with open("DATA/histo2.txt", "r") as file:
+with open("DATA/42_C3-colmap-NOfilter.txt", "r") as file:
+
     data = file.read()
 
 # Extract the intervals and counts using regular expressions
