@@ -24,7 +24,7 @@ The `ObjectCapture` folder includes 3D models generated using the ObjectCapture 
 
 ## Colmap and ObjectCapture Example
 
-![Colmap and ObjectCapture Example](Colmap-ObjectCapure-example.jpg)
+![Colmap and ObjectCapture Example](Screenshots/Colmap-ObjectCapure-example.jpg)
 *Caption: An example showcasing the use of Colmap and ObjectCapture.*
 
 ## Data
