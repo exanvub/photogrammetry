@@ -22,6 +22,11 @@ The `Colmap` folder contains 3D models generated using the Colmap process. Colma
 
 The `ObjectCapture` folder includes 3D models generated using the ObjectCapture process. ObjectCapture is photogrammetry API by Apple inc. for fast and easy creation of 3D models. To understand the process of generating these models using ObjectCapture, please consult the "ObjectCapture-models/README.MD" file.
 
+## Colmap and ObjectCapture Example
+
+![Colmap and ObjectCapture Example](Colmap-ObjectCapure-example.jpg)
+*Caption: An example showcasing the use of Colmap and ObjectCapture.*
+
 ## Data
 
 The `DATA` folder contains all the datasets used in the statistical analysis presented in the research paper. The data provided here is essential for reproducing the results and verifying the findings of the study.
@@ -40,3 +45,7 @@ The script enables users to input model points' coordinates and their correspond
 
 
 For any questions or issues related to this repository, please feel free to contact the authors of the research paper.
+
+## License
+
+This project is licensed under the MIT License

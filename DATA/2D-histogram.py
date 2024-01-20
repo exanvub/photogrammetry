@@ -41,7 +41,7 @@ def create_normalized_2d_histogram(quality_data, ax, title='', ylabel=True, xlab
     if ylabel:
         ax.set_ylabel('Normalized Frequency')
     if xlabel:
-        ax.set_xlabel('Vertex Quality (mm)')
+        ax.set_xlabel('Distance from reference mesh (mm)')
     # ax.set_title(f'Normalized 2D Histogram of Quality ({title})')
     ax.set_title(f'{title}')
     ax.grid(True)
