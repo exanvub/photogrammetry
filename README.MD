@@ -1,4 +1,4 @@
-# Photogrammetry-bone Repository
+# Photogrammetry-bone Repository 
 
 This repository serves as a supplementary resource for the research paper titled "Reliable and Efficient Photogrammetry in Anatomical Research and Education." It contains 3D models generated using the Colmap and ObjectCapture processes, along with the data used in the statistical analysis of the research paper. Additionally, there is a Python script called "3D-model-scaling" that facilitates scaling measurements for the 3D models.
 
