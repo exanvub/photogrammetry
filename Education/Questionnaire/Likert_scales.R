@@ -49,10 +49,22 @@ overall_experience_likert_object <- likert(overall_experience_likert_data)
 overall_experience_order_of_items <- colnames(overall_experience_likert_data)
 
 # Adjust plot to respect the order of items
-plot(overall_experience_likert_object) +
+plot(overall_experience_likert_object, text.size = 5) +
   ggtitle("Overall Experience") +
   theme_minimal() +
   scale_x_discrete(limits = rev(overall_experience_order_of_items))
+
+# Adjust plot to respect the order of items and tweak theme for readability
+plot(overall_experience_likert_object,text.size = 4) +
+  ggtitle("Overall Experience") +
+  theme_minimal(base_size = 12) +   # Adjust base text size for readability
+  scale_x_discrete(limits = rev(overall_experience_order_of_items)) +  # Reversing item order for display
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),  # Center the title and make it bold
+    axis.text.y = element_text(size = 14),  # Adjust axis text size
+    legend.position = "bottom"  # Move legend to the bottom
+  )
+
 
 #---------
 
@@ -87,8 +99,18 @@ plot(ease_of_use_likert) +
   theme_minimal() +
   scale_x_discrete(limits = rev(ease_of_use_order_of_items))
 
+# Adjust plot to respect the order of items and tweak theme for readability
+plot(ease_of_use_likert,text.size = 4) +
+  ggtitle("Ease of Use") +
+  theme_minimal(base_size = 12) +   # Adjust base text size for readability
+  scale_x_discrete(limits = rev(ease_of_use_order_of_items)) +  # Reversing item order for display
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),  # Center the title and make it bold
+    axis.text.y = element_text(size = 14),  # Adjust axis text size
+    legend.position = "bottom"  # Move legend to the bottom
+  )
 
-;#------------------
+#------------------
 
 # Manually specify which columns to use for the second Likert scale plot
 lighting_columns <- c(15, 16, 17, 18, 19, 20)
@@ -122,6 +144,17 @@ plot(lighting_likert_object) +
   theme_minimal() +
   scale_x_discrete(limits = rev(lighting_order_of_items))
 
+plot(lighting_likert_object,text.size = 4) +
+  ggtitle("Polarized filter vs Diffuse lighting") +
+  theme_minimal(base_size = 12) +   # Adjust base text size for readability
+  scale_x_discrete(limits = rev(lighting_order_of_items)) +  # Reversing item order for display
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),  # Center the title and make it bold
+    axis.text.y = element_text(size = 14),  # Adjust axis text size
+    legend.position = "bottom"  # Move legend to the bottom
+  )
+
+
 #-----------------
 # Define the columns for annotations and quiz questions
 annot_quiz_columns <- c(21, 22, 23, 24, 25)  # Update as needed
@@ -153,4 +186,13 @@ plot(annot_quiz_likert) +
   theme_minimal() +
   scale_x_discrete(limits = rev(annot_quiz_order_of_items))
 
+plot(annot_quiz_likert,text.size = 4) +
+  ggtitle("Annotations and Quiz") +
+  theme_minimal(base_size = 12) +   # Adjust base text size for readability
+  scale_x_discrete(limits = rev(annot_quiz_order_of_items)) +  # Reversing item order for display
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),  # Center the title and make it bold
+    axis.text.y = element_text(size = 14),  # Adjust axis text size
+    legend.position = "bottom"  # Move legend to the bottom
+  )
 #-----------

@@ -229,3 +229,17 @@ ggplot(average_ranks, aes(x = reorder(feature, adjusted_rank), y = adjusted_rank
        y = "Average Rank") +
   theme_minimal()
 
+
+# Create the plot
+ggplot(average_ranks, aes(x = reorder(feature, adjusted_rank), y = adjusted_rank, fill = group)) +
+  geom_col(position = "dodge") +
+  coord_flip() +
+  labs(title = "Ranking of Future Features by Group",
+       x = "Feature",
+       y = "Average Rank") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 14),  # Adjust font size if necessary
+        legend.title = element_blank(),
+        legend.position = "bottom"  # Move legend to the bottom
+        
+        )  # Optionally remove legend title
