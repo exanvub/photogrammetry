@@ -1,0 +1,1 @@
+**3D photogrammetry models of anatomical dissections are not included in the repository due to privacy considerations.**
