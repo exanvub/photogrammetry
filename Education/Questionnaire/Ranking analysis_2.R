@@ -7,10 +7,9 @@ library(reshape2)
 library(ggpubr)
 library(tidyverse)
 library(emmeans)
-
-
+library(FSA)
 # Read the data from the Excel file
-file_path <- "Use of Real Life 3D Models in Education.xlsx"
+file_path <- "Data/Use of Real Life 3D Models in Education.xlsx"
 
 data <- read_excel(file_path)
 
@@ -244,141 +243,36 @@ ggplot(average_ranks, aes(x = reorder(feature, adjusted_rank), y = adjusted_rank
         
         )  # Optionally remove legend title
 
-
-
-
-
-
 # -------------------------------------------------------------------------
-# re-analysis with 2-way ANOVA, followed by 1-way ANOVA + Tukey's HSD
 
-library(lmPerm)
-
-# (1) ANOVA to test for interaction effect
-anova_results <- aov(Rank ~ Feature * ResponderType, data = data_long)
-summary(anova_results)
-
-m <- lm(Rank ~ Feature * ResponderType, data = data_long)
-summary(m)$coefficients %>% View()
-anova(m)
-
-# (1a) alternative: ANOVA with permutation test because violation of non-normality
-#      and violation of non-independent observations
-#      => interaction term still significant
-m <- lmp(Rank ~ Feature * ResponderType, data = data_long)
-anova(m)
-
-
-# => either you examine the effect of Feature within the 3 ResponderTypes (2a-2c), 
-#    or you examine the effect of ResponderType within each Feature (3a-3f)
-
-# Simple effects of feature within responder type: if you want to communicate on
-# how each responder ranks the features, but this are 15 pairwise comparisons that 
-# should be mentioned, that's a lot and mostly not very interesting
-
-# (2a) post-hoc: effect of Feature within "Physiotherapy student"
-anova_results <- aov(
-  Rank ~ Feature, 
-  data = data_long %>% filter(ResponderType == "Physiotherapy student")
-)
-summary(anova_results)
-View( TukeyHSD(anova_results)$Feature )
-
-# (2b) post-hoc: effect of Feature within "Physical education student"
-anova_results <- aov(
-  Rank ~ Feature, 
-  data = data_long %>% filter(ResponderType == "Physical education student")
-)
-summary(anova_results)
-View( TukeyHSD(anova_results)$Feature )
-
-# (2c) post-hoc: effect of Feature within "Anatomy staff"
-anova_results <- aov(
-  Rank ~ Feature, 
-  data = data_long %>% filter(ResponderType == "Anatomy staff")
-)
-summary(anova_results)
-View( TukeyHSD(anova_results)$Feature )
-
-# Simple effects of ResponderType within each Feature: if you want to communicate 
-# on how the groups had different preferences 
-
-# (3a) post-hoc: effect of ResponderType within "3D Models for osteology"
-anova_results <- aov(
-  Rank ~ ResponderType, 
-  data = data_long %>% filter(Feature == "3D Models for osteology")
-)
-summary(anova_results)
-View( TukeyHSD(anova_results)$ResponderType )
-
-# (3b) post-hoc: effect of ResponderType within "Added 3D models of detailed anatomy regions"
-anova_results <- aov(
-  Rank ~ ResponderType, 
-  data = data_long %>% filter(Feature == "Added 3D models of detailed anatomy regions")
-)
-summary(anova_results) #n.s.
-
-# (3c) post-hoc: effect of ResponderType within "3D models of the plastic and plastinated anatomy collection"
-anova_results <- aov(
-  Rank ~ ResponderType, 
-  data = data_long %>% filter(Feature == "3D models of the plastic and plastinated anatomy collection")
-)
-summary(anova_results) #n.s.
-
-# (3d) post-hoc: effect of ResponderType within "A list of muscle insertions and innervation added to the annotations"
-anova_results <- aov(
-  Rank ~ ResponderType, 
-  data = data_long %>% filter(Feature == "A list of muscle insertions and innervation added to the annotations")
-)
-summary(anova_results)
-View( TukeyHSD(anova_results)$ResponderType )
-
-# (3e) post-hoc: effect of ResponderType within "More quizzes"
-anova_results <- aov(
-  Rank ~ ResponderType, 
-  data = data_long %>% filter(Feature == "More quizzes")
-)
-summary(anova_results) #n.s.
-
-# (3f) post-hoc: effect of ResponderType within "Nothing needs to be added"
-anova_results <- aov(
-  Rank ~ ResponderType, 
-  data = data_long %>% filter(Feature == "Nothing needs to be added")
-)
-summary(anova_results) #n.s.
-
-
-
-
-# -------------------------------------------------------------------------
-# this is what I would have done: directly testing the features with a KW-test
-# because then you consistently test ordinal data in a non-parametric way
-
+# Kruskal-Wallis test function
 fx_KWtest <- function(x) {
   kruskal.test(Rank ~ ResponderType, data = x)
 }
 
-KWtests <- data_long %>% 
-  split(data_long$Feature) %>%
+# Perform Kruskal-Wallis tests
+KWtests <- data_split %>% 
   map(fx_KWtest)
 
+# Format Kruskal-Wallis results
 KWtests %>% 
   map(function(x) paste0("H = ",sprintf("%.2f",x$statistic),
                          ", p = ",sprintf("%.3f",x$p.value),
                          " => ", ifelse(x$p.value < 0.05,"*","n.s.")))
 
-# result: none of the features show a significant difference between the groups
-
-# if you want to stick with the ANOVA + TukeyHSD approach above, and the reviewer
-# again wines about it, we can argue that the data from the likert-scales in the 
-# questionaire are more ordinal than the rank data for the new features:
-# the difference between "agree" and "strongly agree" is more ordinal in the sense
-# that they don't mean the same thing for each participant, whereas ranking several 
-# features with numbers gives the participants more degrees-of-freedom, making it
-# a more continuous outcome measure, ....
-# but I don't trust this reasoning myself too much :-(
-
-
+# Perform Dunn's test for significant results
+Dunn_results <- list()
+for (feature_name in names(data_split)) {
+  kw_p <- KWtests[[feature_name]]$p.value
+  if (kw_p < 0.05) {
+    cat("\nPerforming Dunn's test for:", feature_name, "\n")
+    Dunn_results[[feature_name]] <- dunnTest(Rank ~ ResponderType,
+                                             data = data_split[[feature_name]],
+                                             method = "bonferroni")  # bh for Benjamini-Hochberg adjustment
+    
+    print(Dunn_results[[feature_name]])
+  }
+}
 
 
 
