@@ -2,3 +2,15 @@
 .Rhistory
 .RData
 .Ruserdata
+
+
+# Ignore all data inside Dissection_Validation/DATA/CT_VQ/
+Dissection_Validation/DATA/CT_VQ/
+
+.DS_Store
+Dissection_Validation/DATA/.DS_Store
+Water_photogrammetry/.DS_Store
+
+Water_photogrammetry/SMPL_fitting/smpl_models/basicmodel_f_lbs_10_207_0_v1.1.0.pkl
+Water_photogrammetry/SMPL_fitting/smpl_models/basicmodel_m_lbs_10_207_0_v1.1.0.pkl
+Water_photogrammetry/SMPL_fitting/smpl_models/basicmodel_neutral_lbs_10_207_0_v1.1.0.pkl
