@@ -4,15 +4,15 @@ This repository serves as a central hub for the research data collected by the E
 
 ## Contents
 
-### 1. Bone
-This folder contains all the research data associated with the paper titled **"Reliable and Efficient Photogrammetry in Anatomical Research and Education."** The data within this folder focuses on the application of photogrammetry techniques in capturing and analyzing bone structures.
-
-### 2. Education
-This folder contains the research data used in the paper titled **"Use of 3D Photogrammetry Models in Anatomical Education."** The data is centered around the use of 3D photogrammetry models in the educational context, examining student interaction with these models in anatomy courses.
-
-### 3. Blender_Addons
+### 1. Blender_Addons
 A collection of Blender add-ons designed for working with photogrammetry models in anatomical research. 
 Includes **Landmark Registration** (`blender_landmarks.py`) for placing, tracking, renaming, and exporting anatomical landmarks on 3D meshes, and **3D Model Scaling** (`blender_scaling.py`) for scaling photogrammetry models to real-world dimensions.
+
+### 2. Bone
+This folder contains all the research data associated with the paper titled **"Reliable and Efficient Photogrammetry in Anatomical Research and Education."** The data within this folder focuses on the application of photogrammetry techniques in capturing and analyzing bone structures.
+
+### 3. Education
+This folder contains the research data used in the paper titled **"Use of 3D Photogrammetry Models in Anatomical Education."** The data is centered around the use of 3D photogrammetry models in the educational context, examining student interaction with these models in anatomy courses.
 
 ### 4. Dissection_Validation
 This folder contains the analysis scripts and data for validating photogrammetry models of dissected human donor material against CT reference meshes and visual inspection scores. It includes **CT Analysis** (`CT_Analysis.py`) for comparing vertex distances between photogrammetry models and reference CT meshes, and **Visual Inspection VAS Analysis** (`visual_analysis.py`) for statistical analysis of Visual Analog Scale (VAS) scoring data from researchers evaluating photogrammetry models across multiple quality topics.
