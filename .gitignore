@@ -3,8 +3,6 @@
 .RData
 .Ruserdata
 
-
-# Ignore all data inside Dissection_Validation/DATA/CT_VQ/
 Dissection_Validation/DATA/CT_VQ/
 
 .DS_Store

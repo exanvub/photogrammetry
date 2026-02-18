@@ -1,0 +1,8 @@
+Topic,Friedman_chi2,p_value,Significant_0.05,n_raters,n_models
+Arteries,24.095,0.000208,True,6,6
+Bone,22.095,0.000502,True,6,6
+Detail,25.905,9.3e-05,True,6,6
+Most Realistic,23.852,0.000232,True,6,6
+Muscle,16.381,0.005837,True,6,6
+Nerves,19.81,0.001357,True,6,6
+Overall,26.19,8.2e-05,True,6,6

@@ -1,0 +1,106 @@
+Topic,Model_A,Model_B,Median_A,Median_B,Wilcoxon_stat,p_value,p_corrected,Significant_0.05,Friedman_significant
+Arteries,CP-OC,CP-RS,7.2,7.35,7.5,0.625,1.0,False,True
+Arteries,CP-OC,DL-OC,7.2,9.35,0.0,0.03125,0.46875,False,True
+Arteries,CP-OC,DL-RS,7.2,9.4,0.0,0.03125,0.46875,False,True
+Arteries,CP-OC,iPhone-OC,7.2,5.4,4.0,0.21875,1.0,False,True
+Arteries,CP-OC,iPhone-RS,7.2,5.0,4.0,0.21875,1.0,False,True
+Arteries,CP-RS,DL-OC,7.35,9.35,0.0,0.03125,0.46875,False,True
+Arteries,CP-RS,DL-RS,7.35,9.4,0.0,0.03125,0.46875,False,True
+Arteries,CP-RS,iPhone-OC,7.35,5.4,1.0,0.0625,0.9375,False,True
+Arteries,CP-RS,iPhone-RS,7.35,5.0,1.0,0.0625,0.9375,False,True
+Arteries,DL-OC,DL-RS,9.35,9.4,7.0,0.53125,1.0,False,True
+Arteries,DL-OC,iPhone-OC,9.35,5.4,0.0,0.03125,0.46875,False,True
+Arteries,DL-OC,iPhone-RS,9.35,5.0,0.0,0.03125,0.46875,False,True
+Arteries,DL-RS,iPhone-OC,9.4,5.4,0.0,0.03125,0.46875,False,True
+Arteries,DL-RS,iPhone-RS,9.4,5.0,0.0,0.03125,0.46875,False,True
+Arteries,iPhone-OC,iPhone-RS,5.4,5.0,5.0,0.28125,1.0,False,True
+Bone,CP-OC,CP-RS,8.0,7.2,2.0,0.09375,1.0,False,True
+Bone,CP-OC,DL-OC,8.0,9.2,1.0,0.0625,0.9375,False,True
+Bone,CP-OC,DL-RS,8.0,9.45,2.0,0.09375,1.0,False,True
+Bone,CP-OC,iPhone-OC,8.0,5.15,1.0,0.0625,0.9375,False,True
+Bone,CP-OC,iPhone-RS,8.0,5.45,2.0,0.09375,1.0,False,True
+Bone,CP-RS,DL-OC,7.2,9.2,0.0,0.03125,0.46875,False,True
+Bone,CP-RS,DL-RS,7.2,9.45,0.0,0.03125,0.46875,False,True
+Bone,CP-RS,iPhone-OC,7.2,5.15,1.5,0.09375,1.0,False,True
+Bone,CP-RS,iPhone-RS,7.2,5.45,2.0,0.09375,1.0,False,True
+Bone,DL-OC,DL-RS,9.2,9.45,10.0,1.0,1.0,False,True
+Bone,DL-OC,iPhone-OC,9.2,5.15,0.0,0.03125,0.46875,False,True
+Bone,DL-OC,iPhone-RS,9.2,5.45,0.0,0.03125,0.46875,False,True
+Bone,DL-RS,iPhone-OC,9.45,5.15,0.0,0.03125,0.46875,False,True
+Bone,DL-RS,iPhone-RS,9.45,5.45,0.0,0.03125,0.46875,False,True
+Bone,iPhone-OC,iPhone-RS,5.15,5.45,9.0,0.8125,1.0,False,True
+Detail,CP-OC,CP-RS,7.4,7.8,4.5,0.25,1.0,False,True
+Detail,CP-OC,DL-OC,7.4,9.05,0.0,0.03125,0.46875,False,True
+Detail,CP-OC,DL-RS,7.4,9.25,0.0,0.03125,0.46875,False,True
+Detail,CP-OC,iPhone-OC,7.4,5.9,1.5,0.09375,1.0,False,True
+Detail,CP-OC,iPhone-RS,7.4,5.2,0.0,0.03125,0.46875,False,True
+Detail,CP-RS,DL-OC,7.8,9.05,0.0,0.03125,0.46875,False,True
+Detail,CP-RS,DL-RS,7.8,9.25,0.0,0.03125,0.46875,False,True
+Detail,CP-RS,iPhone-OC,7.8,5.9,1.5,0.09375,1.0,False,True
+Detail,CP-RS,iPhone-RS,7.8,5.2,0.0,0.03125,0.46875,False,True
+Detail,DL-OC,DL-RS,9.05,9.25,5.5,0.34375,1.0,False,True
+Detail,DL-OC,iPhone-OC,9.05,5.9,0.0,0.03125,0.46875,False,True
+Detail,DL-OC,iPhone-RS,9.05,5.2,0.0,0.03125,0.46875,False,True
+Detail,DL-RS,iPhone-OC,9.25,5.9,0.0,0.03125,0.46875,False,True
+Detail,DL-RS,iPhone-RS,9.25,5.2,0.0,0.03125,0.46875,False,True
+Detail,iPhone-OC,iPhone-RS,5.9,5.2,7.5,0.625,1.0,False,True
+Most Realistic,CP-OC,CP-RS,6.85,6.9,4.0,0.4375,1.0,False,True
+Most Realistic,CP-OC,DL-OC,6.85,9.05,0.0,0.03125,0.46875,False,True
+Most Realistic,CP-OC,DL-RS,6.85,9.5,0.0,0.03125,0.46875,False,True
+Most Realistic,CP-OC,iPhone-OC,6.85,5.95,5.5,0.34375,1.0,False,True
+Most Realistic,CP-OC,iPhone-RS,6.85,5.4,4.0,0.21875,1.0,False,True
+Most Realistic,CP-RS,DL-OC,6.9,9.05,0.0,0.03125,0.46875,False,True
+Most Realistic,CP-RS,DL-RS,6.9,9.5,0.0,0.03125,0.46875,False,True
+Most Realistic,CP-RS,iPhone-OC,6.9,5.95,3.0,0.15625,1.0,False,True
+Most Realistic,CP-RS,iPhone-RS,6.9,5.4,1.5,0.09375,1.0,False,True
+Most Realistic,DL-OC,DL-RS,9.05,9.5,0.0,0.03125,0.46875,False,True
+Most Realistic,DL-OC,iPhone-OC,9.05,5.95,0.0,0.03125,0.46875,False,True
+Most Realistic,DL-OC,iPhone-RS,9.05,5.4,0.0,0.03125,0.46875,False,True
+Most Realistic,DL-RS,iPhone-OC,9.5,5.95,0.0,0.03125,0.46875,False,True
+Most Realistic,DL-RS,iPhone-RS,9.5,5.4,0.0,0.03125,0.46875,False,True
+Most Realistic,iPhone-OC,iPhone-RS,5.95,5.4,5.0,0.3125,1.0,False,True
+Muscle,CP-OC,CP-RS,7.05,6.15,7.0,0.5,1.0,False,True
+Muscle,CP-OC,DL-OC,7.05,8.45,6.0,0.4375,1.0,False,True
+Muscle,CP-OC,DL-RS,7.05,9.2,3.0,0.15625,1.0,False,True
+Muscle,CP-OC,iPhone-OC,7.05,4.4,0.0,0.03125,0.46875,False,True
+Muscle,CP-OC,iPhone-RS,7.05,4.2,3.5,0.1875,1.0,False,True
+Muscle,CP-RS,DL-OC,6.15,8.45,5.0,0.3125,1.0,False,True
+Muscle,CP-RS,DL-RS,6.15,9.2,3.0,0.15625,1.0,False,True
+Muscle,CP-RS,iPhone-OC,6.15,4.4,1.0,0.0625,0.9375,False,True
+Muscle,CP-RS,iPhone-RS,6.15,4.2,3.0,0.15625,1.0,False,True
+Muscle,DL-OC,DL-RS,8.45,9.2,5.0,0.3125,1.0,False,True
+Muscle,DL-OC,iPhone-OC,8.45,4.4,0.0,0.03125,0.46875,False,True
+Muscle,DL-OC,iPhone-RS,8.45,4.2,0.0,0.03125,0.46875,False,True
+Muscle,DL-RS,iPhone-OC,9.2,4.4,0.0,0.03125,0.46875,False,True
+Muscle,DL-RS,iPhone-RS,9.2,4.2,0.0,0.03125,0.46875,False,True
+Muscle,iPhone-OC,iPhone-RS,4.4,4.2,10.0,1.0,1.0,False,True
+Nerves,CP-OC,CP-RS,7.25,7.4,8.5,0.75,1.0,False,True
+Nerves,CP-OC,DL-OC,7.25,9.3,1.0,0.0625,0.9375,False,True
+Nerves,CP-OC,DL-RS,7.25,9.55,1.0,0.0625,0.9375,False,True
+Nerves,CP-OC,iPhone-OC,7.25,5.35,2.0,0.09375,1.0,False,True
+Nerves,CP-OC,iPhone-RS,7.25,5.25,1.0,0.0625,0.9375,False,True
+Nerves,CP-RS,DL-OC,7.4,9.3,1.5,0.09375,1.0,False,True
+Nerves,CP-RS,DL-RS,7.4,9.55,1.0,0.0625,0.9375,False,True
+Nerves,CP-RS,iPhone-OC,7.4,5.35,3.0,0.15625,1.0,False,True
+Nerves,CP-RS,iPhone-RS,7.4,5.25,1.0,0.0625,0.9375,False,True
+Nerves,DL-OC,DL-RS,9.3,9.55,3.0,0.15625,1.0,False,True
+Nerves,DL-OC,iPhone-OC,9.3,5.35,0.0,0.03125,0.46875,False,True
+Nerves,DL-OC,iPhone-RS,9.3,5.25,0.0,0.03125,0.46875,False,True
+Nerves,DL-RS,iPhone-OC,9.55,5.35,0.0,0.03125,0.46875,False,True
+Nerves,DL-RS,iPhone-RS,9.55,5.25,0.0,0.03125,0.46875,False,True
+Nerves,iPhone-OC,iPhone-RS,5.35,5.25,1.0,0.0625,0.9375,False,True
+Overall,CP-OC,CP-RS,7.45,7.65,9.0,0.84375,1.0,False,True
+Overall,CP-OC,DL-OC,7.45,9.1,0.0,0.03125,0.46875,False,True
+Overall,CP-OC,DL-RS,7.45,9.5,0.0,0.03125,0.46875,False,True
+Overall,CP-OC,iPhone-OC,7.45,5.75,0.0,0.03125,0.46875,False,True
+Overall,CP-OC,iPhone-RS,7.45,5.95,1.0,0.0625,0.9375,False,True
+Overall,CP-RS,DL-OC,7.65,9.1,0.0,0.03125,0.46875,False,True
+Overall,CP-RS,DL-RS,7.65,9.5,0.0,0.03125,0.46875,False,True
+Overall,CP-RS,iPhone-OC,7.65,5.75,0.0,0.03125,0.46875,False,True
+Overall,CP-RS,iPhone-RS,7.65,5.95,1.5,0.09375,1.0,False,True
+Overall,DL-OC,DL-RS,9.1,9.5,0.0,0.03125,0.46875,False,True
+Overall,DL-OC,iPhone-OC,9.1,5.75,0.0,0.03125,0.46875,False,True
+Overall,DL-OC,iPhone-RS,9.1,5.95,0.0,0.03125,0.46875,False,True
+Overall,DL-RS,iPhone-OC,9.5,5.75,0.0,0.03125,0.46875,False,True
+Overall,DL-RS,iPhone-RS,9.5,5.95,0.0,0.03125,0.46875,False,True
+Overall,iPhone-OC,iPhone-RS,5.75,5.95,10.0,1.0,1.0,False,True

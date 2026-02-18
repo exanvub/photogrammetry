@@ -1,0 +1,43 @@
+Topic,Model,mean_rank,median_rank
+Arteries,DL-OC,1.5,1.5
+Arteries,DL-RS,1.5,1.5
+Arteries,CP-RS,3.67,3.5
+Arteries,CP-OC,4.0,4.0
+Arteries,iPhone-OC,4.83,5.0
+Arteries,iPhone-RS,5.5,6.0
+Bone,DL-OC,1.67,2.0
+Bone,DL-RS,1.67,1.5
+Bone,CP-OC,3.17,3.0
+Bone,CP-RS,4.17,4.0
+Bone,iPhone-OC,5.0,5.0
+Bone,iPhone-RS,5.33,6.0
+Detail,DL-RS,1.33,1.0
+Detail,DL-OC,1.67,2.0
+Detail,CP-RS,3.5,3.5
+Detail,CP-OC,3.83,4.0
+Detail,iPhone-OC,5.0,5.0
+Detail,iPhone-RS,5.67,6.0
+Most Realistic,DL-RS,1.0,1.0
+Most Realistic,DL-OC,2.0,2.0
+Most Realistic,CP-RS,3.75,3.5
+Most Realistic,CP-OC,4.25,4.0
+Most Realistic,iPhone-OC,4.67,5.0
+Most Realistic,iPhone-RS,5.33,6.0
+Muscle,DL-RS,1.83,1.0
+Muscle,DL-OC,2.5,2.0
+Muscle,CP-OC,3.17,3.0
+Muscle,CP-RS,3.17,3.5
+Muscle,iPhone-OC,5.17,5.0
+Muscle,iPhone-RS,5.17,6.0
+Nerves,DL-RS,1.5,1.0
+Nerves,DL-OC,2.17,2.0
+Nerves,CP-OC,3.5,3.5
+Nerves,CP-RS,3.5,3.5
+Nerves,iPhone-OC,4.83,5.0
+Nerves,iPhone-RS,5.5,6.0
+Overall,DL-RS,1.0,1.0
+Overall,DL-OC,2.0,2.0
+Overall,CP-OC,3.67,4.0
+Overall,CP-RS,3.67,3.5
+Overall,iPhone-OC,5.33,5.0
+Overall,iPhone-RS,5.33,6.0

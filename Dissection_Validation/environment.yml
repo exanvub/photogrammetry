@@ -1,0 +1,48 @@
+name: photogrammetry-mesh
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  # Python
+  - python=3.10
+  
+  # Core scientific computing
+  - numpy>=1.21.0
+  - scipy>=1.7.0
+  - pandas
+  
+  # Mesh processing and 3D geometry
+  - trimesh
+  - open3d
+  - pyvista
+  - vtk
+  
+  # Image processing
+  - scikit-image
+  - opencv
+  - pillow
+  
+  # Visualization
+  - matplotlib
+  - plotly
+  - seaborn
+  
+  # Data handling
+  - pyyaml
+  - tqdm
+  - configargparse
+  
+  # Statistics
+  - statsmodels
+  
+  # Development tools
+  - jupyter
+  - ipython
+  - pytest
+  
+  # Pip packages (installed via pip after conda packages)
+  - pip
+  - pip:
+    - configer
+    - pymeshlab  # Advanced mesh processing

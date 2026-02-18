@@ -1,0 +1,8 @@
+Topic,Kendalls_W,Chi2,df,p_value,Significant_0.05,Interpretation
+Arteries,0.8032,24.095,5,0.000208,True,Strong
+Bone,0.7365,22.095,5,0.000502,True,Strong
+Detail,0.8635,25.905,5,9.3e-05,True,Strong
+Most Realistic,0.7913,23.738,5,0.000244,True,Strong
+Muscle,0.546,16.381,5,0.005837,True,Moderate
+Nerves,0.6603,19.81,5,0.001357,True,Moderate
+Overall,0.873,26.19,5,8.2e-05,True,Strong
