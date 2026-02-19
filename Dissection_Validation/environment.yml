@@ -28,6 +28,10 @@ dependencies:
   - plotly
   - seaborn
   
+  # Medical imaging
+  - pydicom
+  - pynrrd
+  
   # Data handling
   - pyyaml
   - tqdm
